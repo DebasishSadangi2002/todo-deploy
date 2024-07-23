@@ -1,0 +1,14 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore the Django SQLite database file
+db.sqlite3
+
+# Ignore media and static files (usually served separately)
+media/
+static/
+
+
+
+# Ignore log files
+*.log

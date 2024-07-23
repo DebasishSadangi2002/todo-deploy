@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+    
+
+{% block content %}
+    
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+        <a href="{% url 'users:logout' %}">Logout</a>
+    {% else %}
+        <h1>Welcome, Guest!</h1>
+        <p>You are not logged in. Please <a href="{% url 'users:login' %}">login</a>.</p>
+        <p>If you don't have an account, please <a href="{% url 'users:registration' %}">register here</a>.</p>
+    {% endif %}
+{% endblock content %}
+    

@@ -1,0 +1,26 @@
+
+
+{% extends 'layout.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+        
+
+{% block content %}
+    <h3>{{ user.username }}! Your Tasks </h3>
+    <tr>
+        <td>Item</td><br>
+    </tr>
+    {% for task in  tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <a href="{% url 'todo:update_todo' task.pk %}">Update</a> |
+                    <a href="{% url 'todo:delete_todo' task.pk %}">Delete</a>
+        {{task.compleated}}<br>
+    </tr>
+    {% endfor %}
+        
+{% endblock content %}
+    
