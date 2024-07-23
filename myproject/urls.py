@@ -23,5 +23,8 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('task/', include('todo.urls')),
     path('users/', include('users.urls')),
+    path('register/', views.register, name="registration"),
+    path('login/', views.login_view, name="login"),
+    path('logout/', views.logout_view, name="logout"),
 ]
 
