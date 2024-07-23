@@ -38,4 +38,51 @@ def logout_view(request):
     logout(request)
     return redirect('home')
 
+from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+from todo.forms import TodoItemForm
+from todo.models import Task
+
+# Create your views here.
+@login_required
+def list(request):
+    tasks = Task.objects.filter(username=request.user)
+    return render(request, 'list.html', {'tasks':tasks})
+
+@login_required
+def add_todo_view(request):
+    if request.method == 'POST':
+        form = TodoItemForm(request.POST)
+        if form.is_valid():
+            todo = form.save(commit=False)
+            todo.username = request.user
+            todo.save()
+            return redirect('home')
+    else:
+        form = TodoItemForm()
+    return render(request, 'add_todo.html', {'form': form})
+
+
+@login_required
+def update_todo_view(request, pk):
+    todo = get_object_or_404(Task, pk=pk, username=request.user)
+    if request.method == 'POST':
+        form = TodoItemForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            return redirect('list')
+    else:
+        form = TodoItemForm(instance=todo)
+    return render(request, 'update_todo.html', {'form': form, 'todo': todo})
+
+@login_required
+def delete_todo_view(request, pk):
+    todo = get_object_or_404(Task, pk=pk, username=request.user)
+    if request.method == 'POST':
+        todo.delete()
+        return redirect('home')
+    return render(request, 'delete_todo.html', {'todo': todo})
+
+
 
