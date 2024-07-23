@@ -1,0 +1,109 @@
+/* Basic reset and settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Choose a preferred font family */
+  }
+  
+  /* Navigation bar styling */
+  nav {
+    display: flex;
+    justify-content: space-between; /* Evenly distribute links */
+    align-items: center;
+    padding: 1rem 2rem; /* Add some padding for aesthetics */
+    background-color: #f0f0f0; /* Light background for contrast */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  nav a {
+    color: #333; /* Darker text for readability */
+    text-decoration: none; /* Remove underlines */
+    padding: 0.5rem 1rem; /* Add spacing between links */
+    font-size: 16px; /* Consistent font size */
+  }
+  
+  nav a:hover {
+    background-color: #eee; /* Slight hover effect */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Main content area styling */
+  main {
+    padding: 2rem; /* Add some padding for content */
+    min-height: calc(100vh - (nav height + footer height)); /* Ensure content fills remaining space */
+  }
+  
+  /* Placeholder styles for content blocks (replace with your specific styles) */
+  .content-block {
+    margin-bottom: 2rem; /* Add spacing between content blocks */
+    padding: 1rem;
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 4px; /* Rounded corners for a softer look */
+  }
+  
+  .content-block h2,
+  .content-block h3,
+  .content-block p {
+    margin: 0.5rem 0; /* Consistent margin for headings and paragraphs */
+  }
+  
+  /* Footer (optional) */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* style.css */
+
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form p {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
